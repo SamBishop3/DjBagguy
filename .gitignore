@@ -1,0 +1,5 @@
+.env
+bagguy-email.json
+token.pickle
+__pycache__/
+send-email.py

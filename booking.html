@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="eng">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book DJ Bagguy</title>
+    <!-- Link to the CSS stylesheet -->
+    <link rel="stylesheet" href="./css/styles.css">
+</head>
+<body>
+    <!-- Booking Page Container -->
+    <div class="booking-container">
+        <!-- Background Video Section -->
+        <video id="background-video" autoplay muted playsinline loop class="background-video">
+            <source src="../assets/videos/bagguyclip1.mp4" type="video/mp4">
+            <source src="../assets/videos/bagguyclip2.mp4" type="video/mp4">
+            <source src="../assets/videos/bagguyclip3.mp4" type="video/mp4">
+            <source src="../assets/videos/bagguycolors.mp4" type="vidoe/mp4">
+        </video>
+
+        <!-- Navigation Bar -->
+        <nav class="navbar">
+            <a href="index.html" class="nav-link">Home</a>
+            <a href="experience.html" class="nav-link">Book DJ Bagguy</a>
+        </nav>
+
+        <!-- Main Content Section -->
+        <div class="content">
+            <!-- Text above the form -->
+            <div class="booking-text">
+                <h1>Book DJ Bagguy</h1>
+                <p>Fill out the form below to reserve your time with DJ Bagguy.</p>
+            </div>
+
+            <!-- Contact Form -->
+            <div class="container">
+                <form action="/submit_booking" method="POST">
+                    <!-- First Name -->
+                    <label for="fname">First Name</label>
+                    <input type="text" id="fname" name="firstname" placeholder="Your name.." required>
+                
+                    <!-- Last Name -->
+                    <label for="lname">Last Name</label>
+                    <input type="text" id="lname" name="lastname" placeholder="Your last name.." required>
+                
+                    <!-- Country -->
+                    <label for="country">Country</label>
+                    <select id="country" name="country" required>
+                        <option value="australia">Australia</option>
+                        <option value="canada">Canada</option>
+                        <option value="usa">USA</option>
+                    </select>
+                
+                    <!-- Subject -->
+                    <label for="subject">Subject</label>
+                    <textarea id="subject" name="subject" placeholder="Write something..." style="height:200px" required></textarea>
+                
+                    <!-- Submit Button -->
+                    <input type="submit" value="Submit">
+                </form>
+            </div>
+        </div>
+    </div>
+    <script src="./script.js"></script>
+
+</body>
+</html>
