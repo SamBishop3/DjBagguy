@@ -74,8 +74,8 @@ if (form) {
         alert("Submitting your booking request...");
 
         // Send the form data via Fetch API
-        fetch(form.action, {
-            method: form.method, // Use the form's method (GET/POST)
+        fetch('/send-email', {  // Make sure this URL matches your backend endpoint
+            method: 'POST', 
             body: formData, // Send form data as the request body
         })
         .then(response => {
