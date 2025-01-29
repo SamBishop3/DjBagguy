@@ -15,31 +15,35 @@ window.onload = function () {
     const videoElement = document.getElementById('background-video');
 
     if (videoElement) {
-        // Function to change the video source when the current video ends
+        // Ensure autoplay works on all devices
+        videoElement.autoplay = true;
+        videoElement.muted = true;
+        videoElement.playsInline = true; // Required for mobile autoplay
+
+        // Function to change the video source randomly when the current video ends
         const playNextVideo = () => {
             let nextVideoIndex;
 
-            // Shuffle and ensure it's a different video each time
+            // Pick a random video, ensuring it's different from the last one
             do {
-                nextVideoIndex = Math.floor(Math.random() * videos.length); // Pick random video
-            } while (nextVideoIndex === currentVideoIndex); // Ensure it's not the same as the previous video
+                nextVideoIndex = Math.floor(Math.random() * videos.length);
+            } while (nextVideoIndex === currentVideoIndex);
 
             currentVideoIndex = nextVideoIndex; // Update current video index
-            videoElement.src = videos[currentVideoIndex]; // Change the video source
-            videoElement.load(); // Load the new video
-            videoElement.muted = true; // Mute video for autoplay
+            videoElement.src = videos[currentVideoIndex]; // Change video source
 
-            // Attempt to play the video and catch any errors
             videoElement.play().catch(error => {
-                console.log("Autoplay failed:", error); // Log any autoplay errors
+                console.log("Autoplay failed:", error); // Handle any autoplay errors
             });
         };
 
-        // Event listener for when the current video ends
-        videoElement.addEventListener('ended', playNextVideo);
+        // Load and play the first video immediately
+        currentVideoIndex = Math.floor(Math.random() * videos.length); // Pick a random starting video
+        videoElement.src = videos[currentVideoIndex];
+        videoElement.play().catch(error => console.log("Initial autoplay failed:", error));
 
-        // Start by playing the first video
-        playNextVideo();
+        // When the current video ends, load a new one at random
+        videoElement.addEventListener('ended', playNextVideo);
     } else {
         console.error("Video element not found!"); // Log an error if video element isn't found
     }
@@ -61,35 +65,3 @@ window.onload = function () {
     }
 };
 
-// Form Submission with Fetch API (to avoid page reload)
-const form = document.querySelector('form');
-if (form) {
-    form.addEventListener('submit', function (event) {
-        event.preventDefault(); // Prevent default form submission (page reload)
-
-        const formData = new FormData(form); // Create FormData from the form
-
-        // Show a loading message while submitting
-        alert("Submitting your booking request...");
-
-        // Send the form data via Fetch API
-        fetch('/send-email', {  // Make sure this URL matches your backend endpoint
-            method: 'POST', 
-            body: formData, // Send form data as the request body
-        })
-        .then(response => {
-            if (response.ok) {
-                alert("Thank you! Your booking request has been sent.");
-                form.reset(); // Clear the form fields after successful submission
-            } else {
-                alert("There was an error. Please try again.");
-            }
-        })
-        .catch(error => {
-            console.error("Submission failed:", error); // Log any errors
-            alert("Failed to send the request. Please check your network connection.");
-        });
-    });
-} else {
-    console.error("Form element not found!"); // Log an error if form element isn't found
-}
