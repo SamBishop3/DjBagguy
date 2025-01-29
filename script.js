@@ -5,7 +5,6 @@ window.onload = function () {
     // Array of video file paths for the background videos
     const videos = [
         '../assets/videos/bagguyclip1.mp4',
-        '../assets/videos/bagguyclip2.mp4',
         '../assets/videos/bagguyclip3.mp4',
         '../assets/videos/bagguycolors.mp4',
     ];
