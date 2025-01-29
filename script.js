@@ -15,6 +15,18 @@ window.onload = function () {
     const videoElement = document.getElementById('background-video');
 
     if (videoElement) {
+        // Set the first video source immediately (for Safari autoplay)
+        videoElement.src = videos[0];
+        videoElement.load(); // Load the video
+        videoElement.muted = true; // Ensure muted for autoplay
+
+        // Attempt to play the video and catch any errors
+        videoElement.play().then(() => {
+            console.log("Video playing");
+        }).catch(error => {
+            console.log("Autoplay blocked:", error); // Log any autoplay errors
+        });
+
         // Function to change the video source when the current video ends
         const playNextVideo = () => {
             let nextVideoIndex;
