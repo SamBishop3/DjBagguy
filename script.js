@@ -64,4 +64,3 @@ window.onload = function () {
         console.error("Unmute button not found!"); // Log an error if unmute button isn't found
     }
 };
-
