@@ -1,3 +1,4 @@
+
 // This function runs when the page finishes loading
 window.onload = function () {
     console.log("JavaScript is running");
