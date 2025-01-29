@@ -1,302 +1,257 @@
 /* General body styling */
 body {
-    margin: 0; /* Remove default margin */
-    padding: 0; /* Remove default padding */
-    background: black; /* Set the background color to match the video */
-    overflow: hidden; /* Prevent scrollbars if content overflows */
-}
-
-/* Full screen container for the homepage */
-.home-container {
-    position: relative; /* Make container position relative to place content inside */
-    height: 100vh; /* Full screen height */
-    color: white; /* Text color */
     margin: 0;
     padding: 0;
-    overflow: hidden; /* Prevent scrollbars */
+    background: black;
+    overflow: hidden;
+}
+
+/* Full-screen container for the homepage */
+.home-container {
+    position: relative;
+    height: 100vh;
+    color: white;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
 }
 
 /* Styling for the background video */
 .background-video {
-    position: absolute; /* Position the video absolutely to cover the entire screen */
-    top: 0; /* Align to the top */
-    left: 0; /* Align to the left */
-    width: 100%; /* Stretch video across full width */
-    height: 100%; /* Stretch video across full height */
-    object-fit: cover; /* Ensure video covers the entire screen without distortion */
-    z-index: -1; /* Place video behind content */
-    background-color: black; /* Fallback background color if video fails */
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+    background-color: black;
 }
 
 /* Navigation Bar styling */
 .navbar {
-    position: fixed; /* Fix navbar to the top of the screen */
-    top: 20px; /* Adjust top spacing */
-    left: 50%; /* Center horizontally */
-    transform: translateX(-50%); /* Correct alignment */
-    display: flex; /* Use flexbox for layout */
-    gap: 20px; /* Space between links */
-    font-size: 1.2rem; /* Font size of links */
-    color: white; /* Text color */
-    z-index: 2; /* Ensure navbar stays above other content */
-}
-
-/* Center navigation links inside the navbar */
-.navbar {
-    justify-content: center; /* Center the links horizontally */
+    position: fixed;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 20px;
+    font-size: 1.2rem;
+    color: white;
+    z-index: 2;
+    justify-content: center;
 }
 
 /* Individual navigation link styling */
 .nav-link {
-    text-decoration: none; /* Remove underline from links */
-    color: white; /* Set link color */
-    padding: 10px 18px; /* Adjust padding for larger clickable area */
-    border: 2px solid rgba(0, 0, 0, 0.5); /* Border around links */
-    border-radius: 5px; /* Rounded corners for links */
-    background-color: rgba(0, 0, 0, 0.6); /* Transparent background for links */
-    font-size: 1.2rem; /* Font size for links */
-    transition: all 0.3s ease; /* Smooth transition for hover effects */
+    text-decoration: none;
+    color: white;
+    padding: 10px 18px;
+    border: 2px solid rgba(0, 0, 0, 0.5);
+    border-radius: 5px;
+    background-color: rgba(0, 0, 0, 0.6);
+    font-size: 1.2rem;
+    transition: all 0.3s ease;
 }
 
 /* Hover effect for navigation links */
 .nav-link:hover {
-    background-color: rgba(0, 0, 0, 0.8); /* Darker background on hover */
-    border: 2px solid rgba(0, 0, 0, 0.8); /* Darker border on hover */
+    background-color: rgba(0, 0, 0, 0.8);
+    border: 2px solid rgba(0, 0, 0, 0.8);
 }
 
 /* Content styling: ensures text is centered on the page */
 .content {
-    position: absolute; /* Absolute positioning to center the content */
-    top: 50%; /* Vertically center */
-    left: 50%; /* Horizontally center */
-    transform: translate(-50%, -50%); /* Adjust position to truly center content */
-    text-align: center; /* Center align text */
-    z-index: 1; /* Make sure content stays above background video */
-    width: 100%; /* Full width to adjust within viewport */
-    box-sizing: border-box; /* Include padding in element's total width/height */
-    padding: 0 20px; /* Padding to ensure text doesn't touch screen edges */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    z-index: 1;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 0 20px;
 }
 
 /* Main heading (h1) styling */
 h1 {
-    font-size: 3rem; /* Set font size of the heading */
-    margin: 0; /* Remove default margin */
+    font-size: 3rem;
+    margin: 0;
 }
 
 /* Paragraph styling */
 p {
-    font-size: 1.5rem; /* Set font size for paragraphs */
-    margin-top: 10px; /* Space above the paragraph */
+    font-size: 1.5rem;
+    margin-top: 10px;
 }
 
 /* Styling for the unmute button */
 .unmute-button {
-    position: absolute; /* Position the button at the bottom */
-    bottom: 40px; /* Distance from the bottom */
-    left: 50%; /* Center button horizontally */
-    transform: translateX(-50%); /* Correct alignment */
-    background-color: rgba(0, 0, 0, 0.6); /* Dark background with opacity */
-    color: white; /* Text color */
-    padding: 12px 25px; /* Adjust padding for button size */
-    font-size: 1.5rem; /* Set font size */
-    border-radius: 5px; /* Rounded corners */
-    z-index: 1; /* Ensure button stays above video */
-    border: none; /* Remove button border */
-    cursor: pointer; /* Pointer cursor on hover */
+    position: absolute;
+    bottom: 40px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgba(0, 0, 0, 0.6);
+    color: white;
+    padding: 12px 25px;
+    font-size: 1.5rem;
+    border-radius: 5px;
+    z-index: 1;
+    border: none;
+    cursor: pointer;
 }
 
 /* Hover effect for unmute button */
 .unmute-button:hover {
-    background-color: rgba(0, 0, 0, 0.8); /* Darker background on hover */
+    background-color: rgba(0, 0, 0, 0.8);
 }
 
 /* Ensure navbar links and content are not overlapping */
 .navbar, .content {
-    width: 100%; /* Full width */
+    width: 100%;
 }
 
 /* Contact form styling */
 .container {
     position: relative;
-    max-width: 550px;  /* Limit max-width for form */
-    width: 90%;  /* Responsive width */
-    margin: 0 auto; /* Center form */
-    background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent dark background */
-    padding: 20px; /* Padding for form fields */
-    border-radius: 8px; /* Rounded corners */
-    box-sizing: border-box; /* Include padding in element's total size */
-    z-index: 2; /* Ensure form appears above other content */
-    color: white; /* Text color */
-    display: flex; /* Flexbox layout */
-    flex-direction: column; /* Stack form fields vertically */
-    gap: 15px; /* Space between form fields */
-    
-    /* Background image for the form */
-    background-image: url('../assets/images/dj-logo.png'); /* Path to logo */
-    background-size: cover; /* Stretch the image to cover the form */
-    background-position: center; /* Center the logo */
-    background-repeat: no-repeat; /* Prevent image repeat */
-    background-attachment: fixed; /* Keep the background fixed */
+    max-width: 550px;
+    width: 90%;
+    margin: 0 auto;
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 20px;
+    border-radius: 8px;
+    box-sizing: border-box;
+    z-index: 2;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    background-image: url('../assets/images/dj-logo.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
 }
 
 /* Label styling for form elements */
 .container label {
-    text-align: left; /* Left-align labels */
-    font-size: 1.2rem; /* Font size for labels */
-    margin-bottom: 5px; /* Space below label */
+    text-align: left;
+    font-size: 1.2rem;
+    margin-bottom: 5px;
 }
 
 /* Styling for input fields in the contact form */
-.container input[type="text"], 
-.container select, 
+.container input[type="text"],
+.container select,
 .container textarea {
-    width: 100%; /* Full width input fields */
-    padding: 10px; /* Padding inside input fields */
-    margin-bottom: 15px; /* Space below input fields */
-    border: none; /* Remove borders */
-    border-radius: 5px; /* Rounded corners */
-    background-color: rgba(255, 255, 255, 0.2); /* Transparent background */
-    color: white; /* Text color */
-    font-size: 1rem; /* Font size */
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: none;
+    border-radius: 5px;
+    background-color: rgba(255, 255, 255, 0.2);
+    color: white;
+    font-size: 1rem;
+    box-sizing: border-box;
+}
+
+/* Fix for textareas sticking out of the form container */
+.container textarea {
+    height: 200px;
+    resize: none;
+    margin-bottom: 15px;
 }
 
 /* Submit button styling */
 .container input[type="submit"] {
-    background-color: #ff6600; /* Background color for submit button */
-    color: white; /* Text color */
-    padding: 12px 20px; /* Button padding */
-    font-size: 1.2rem; /* Font size for button */
-    border: none; /* Remove border */
-    border-radius: 5px; /* Rounded corners */
-    cursor: pointer; /* Pointer cursor on hover */
-    transition: all 0.3s ease; /* Smooth transition */
+    background-color: #ff6600;
+    color: white;
+    padding: 12px 20px;
+    font-size: 1.2rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
 }
 
-/* Hover effect for the submit button */
+/* Hover effect for submit button */
 .container input[type="submit"]:hover {
-    background-color: #ff8533; /* Darker color on hover */
+    background-color: #ff8533;
 }
 
 /* Ensure form elements are aligned properly */
 .container form {
-    display: flex; /* Flexbox layout */
-    flex-direction: column; /* Stack fields vertically */
-    gap: 10px; /* Space between fields */
-}
-
-/* Ensure textarea has appropriate height */
-textarea {
-    height: 200px; /* Set height for textareas */
-    resize: none; /* Disable resize */
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
 }
 
 /* Media queries for responsiveness */
 @media (max-width: 768px) {
-    /* Ensure background video scales properly on smaller screens */
-    .background-video {
-        object-fit: cover; /* Ensure video scales without distortion */
-        height: 100%;
-        width: 100%;
-    }
-
-    /* Add some margin to the top of the content to prevent overlap with navbar */
-    .content {
-        margin-top: 80px; /* Adjust this value to avoid overlap with navbar */
-    }
-
-    /* Adjust heading size on smaller screens */
-    h1 {
-        font-size: 2rem; /* Smaller heading */
-    }
-
-    /* Adjust paragraph text size */
-    p {
-        font-size: 1rem; /* Smaller paragraph text */
-    }
-
-    /* Adjust unmute button size and position */
-    .unmute-button {
-        bottom: 20px; /* Move button closer to the bottom */
-        padding: 10px 18px; /* Adjust padding */
-        font-size: 1.3rem; /* Adjust font size */
-    }
-
-    /* Adjust navigation link styles for small screens */
-    .nav-link {
-        font-size: 1rem; /* Smaller font size */
-        padding: 8px 15px; /* Smaller padding */
-        border-radius: 3px; /* Less rounded corners */
-    }
-
-    /* Adjust form styling for small screens */
-    .container {
-        width: 100%; /* Full width for the form */
-        padding: 10px; /* Adjust padding */
-        box-sizing: border-box; /* Prevent overflow */
-    }
-
-    /* Label styling */
-    .container label {
-        font-size: 1rem; /* Adjust label size */
-    }
-
-    /* Adjust input fields and textarea */
-    .container input[type="text"], 
-    .container select, 
-    .container textarea {
-        padding: 12px; /* Increase padding for better usability */
-        font-size: 1rem; /* Adjust font size */
-    }
-
-    /* Adjust submit button */
-    .container input[type="submit"] {
-        font-size: 1.1rem; /* Smaller font size for submit button */
-        padding: 10px 18px; /* Adjust padding */
-    }
-}
-
-/* Additional media query for very small devices like 320px */
-@media (max-width: 320px) {
-    /* Ensure background video scales properly */
     .background-video {
         object-fit: cover;
         height: 100%;
         width: 100%;
     }
 
-    /* Adjust heading and text sizes */
     h1 {
-        font-size: 1.6rem; /* Smaller heading size */
+        font-size: 2rem;
     }
 
     p {
-        font-size: 0.9rem; /* Smaller paragraph text */
+        font-size: 1rem;
     }
 
-    /* Adjust unmute button for small devices */
     .unmute-button {
-        bottom: 10px; /* Adjust button position */
-        padding: 8px 15px; /* Adjust padding */
-        font-size: 1.2rem; /* Adjust font size */
+        bottom: 20px;
+        padding: 10px 18px;
+        font-size: 1.3rem;
     }
 
-    /* Navigation links adjustment */
     .nav-link {
-        font-size: 0.9rem; /* Smaller text */
-        padding: 8px 12px; /* Adjust padding */
-        background-color: rgba(0, 0, 0, 0.8); /* Darker background */
-        text-align: center; /* Center-align text */
+        font-size: 1rem;
+        padding: 8px 15px;
+        border-radius: 3px;
     }
 
-    /* Adjust form styling for small screens */
     .container {
-        width: 100%; /* Full width for the form */
-        padding: 10px; /* Adjust padding */
+        width: 100%;
+        padding: 10px;
+    }
+}
+
+/* Additional media query for very small devices like 320px */
+@media (max-width: 320px) {
+    .background-video {
+        object-fit: cover;
+        height: 100%;
+        width: 100%;
     }
 
-    .container input[type="text"], 
-    .container select, 
-    .container textarea {
-        font-size: 1rem; /* Adjust font size */
+    h1 {
+        font-size: 1.6rem;
     }
+
+    p {
+        font-size: 0.9rem;
+    }
+
+    .unmute-button {
+        bottom: 10px;
+        padding: 8px 15px;
+        font-size: 1.2rem;
+    }
+
+    .nav-link {
+        font-size: 0.9rem;
+        padding: 8px 12px;
+        background-color: rgba(0, 0, 0, 0.8);
+        text-align: center;
+    }
+}
+
+/* Styling for the text above the form */
+.booking-text {
+    color: white;
+    text-align: center;
 }
