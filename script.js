@@ -1,5 +1,3 @@
-
-// This function runs when the page finishes loading
 window.onload = function () {
     console.log("JavaScript is running");
 
@@ -86,7 +84,7 @@ if (form) {
         alert("Submitting your booking request...");
 
         // Send the form data via Fetch API
-        fetch('/send-email', {  // Make sure this URL matches your backend endpoint
+        fetch('http://127.0.0.1:5001/submit_booking', {  // Updated URL to match the Flask route
             method: 'POST', 
             body: formData, // Send form data as the request body
         })
