@@ -84,7 +84,7 @@ if (form) {
         alert("Submitting your booking request...");
 
         // Send the form data via Fetch API
-        fetch('http://127.0.0.1:5001/submit_booking', {  // Updated URL to match the Flask route
+        fetch('http://www.djbagguy.com/submit_booking', {  // Updated URL to match the Flask route
             method: 'POST', 
             body: formData, // Send form data as the request body
         })
